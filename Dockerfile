@@ -1,14 +1,4 @@
-FROM rocker/verse:3.6.3
-MAINTAINER Lino Licuanan <linolicuanan@gmail.com>
-
-# Install Packages
-RUN install2.r \
-	tidyverse
-
-# Copy directory
-RUN mkdir -p ~/src
-WORKDIR ~/src
-COPY run.R run.R
-
-# Command
-CMD ["Rscript", "run.R"] 
+FROM python:3.7
+RUN pip3 install 'apache-airflow'
+RUN airflow db init
+CMD (airflow scheduler &) && airflow webserver 
