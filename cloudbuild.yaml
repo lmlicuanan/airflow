@@ -1,0 +1,5 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: [ 'build', '-t', 'gcr.io/data-analysis-300103/airflow', '.' ]
+images:
+- 'asia-southeast1-docker.pkg.dev/data-analysis-300103/airflow/hello-world:v0.0.1'
