@@ -4,4 +4,4 @@ steps:
 images:
 - 'asia-southeast1-docker.pkg.dev/data-analysis-300103/airflow/hello-world:v0.0.1'
 options:
-- logging: CLOUD_LOGGING_ONLY
+  logging: CLOUD_LOGGING_ONLY
